@@ -17,34 +17,52 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">&lt;/Tamir Chen&gt;</a>
+    <header>
+      <!-- ? NAV -->
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/"> Home </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="/about.html"> About </a>
-          </li>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">&lt;/Tamir Chen&gt;</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/"> Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/about.html"> About </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/webdev.html">Web developing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/music.html">Music</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- ? HERO -->
 
-          <li class="nav-item">
-            <a class="nav-link" href="/webdev.html">Web developing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/music.html">Music</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <section class="header hero">
-      <header><h1>About me</h1></header>
-    </section>
+
+      <header class="header hero about"><h1>About me</h1></header>
+
+      
+
     <!-- ? ABOUT -->
     <section id="about">
       <div class="about-info">
@@ -57,42 +75,59 @@
           </div>
           <div class="about-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-              possimus quas animi, nostrum sapiente aliquid. Eos consequuntur
-              quos laborum molestiae perferendis magni doloremque accusantium
-              quaerat deserunt, deleniti dolorum placeat. Quas.
+            I'm Tamir Chen - A web developer and a Music producer based in Berlin, Germany. <br>
+            i'll be happy to build a website for you or add some magic to your song/soundtrack.
+            please feel free to <a href="mailto:Tamirchn1@gmail.com">contact me </a> 
+            
             </p>
           </div>
+    </section>
 
-          <!-- ? ABOUT LINKS -->
+    <!-- ? Skills -->
+
+    <section id="skills">
+      <h2>Skills</h2>
+
+      <i class="fab fa-html5 fa-2x">HTML</i> <br />
+      <i class="fab fa-css3 fa-2x">CSS3</i> <br />
+      <i class="fab fa-js fa-2x">JavaScript</i> <br />
+      <i class="fab fa-react fa-2x">React</i> <br />
+      <i class="fab fa-node fa-2x">Node.js</i> <br />
+      <img src="https://img.icons8.com/windows/32/000000/ableton.png" /><span
+        >Ableton live</span
+      >
+
+                <!-- ? ABOUT LINKS -->
           <div class="about-links">
             <a href="https://www.linkedin.com/in/tamir-chen-22a84a155/"
-              ><i class="fa fa-linkedin" aria-hidden="true"></i
+              ><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i
             ></a>
             <a href="https://github.com/tamirchn1"
-              ><i class="fab fa-github"></i
+              ><i class="fab fa-github fa-2x"></i
             ></a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="skills">
-      <h2>skills</h2>
-
-      <i class="fab fa-html5">HTML</i>
-      <i class="fab fa-css3">CSS3</i>
-      <i class="fab fa-js">JavaScript</i>
-      <i class="fab fa-react">React</i>
-      <i class="fab fa-node">Node.js</i>
-      <img src="https://img.icons8.com/windows/32/000000/ableton.png" /><span
-        >Ableton live</span
-      >
-    </section>
-
     <footer>
       <span> &copy;2021 All right reserved</span>
       <span> made with ❤️ by Tamir Chen</span>
     </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

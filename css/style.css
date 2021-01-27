@@ -21,20 +21,23 @@ h1 {
 h2 {
   margin-top: 3%;
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 100;
+  text-decoration: underline cadetblue;
 }
 
 section {
-  border-top: 1px solid black;
-}
-
-.navbar {
-  position: sticky;
 }
 
 /* ? NAV */
 
+#navbarNav {
+  padding-left: 40%;
+}
+
+.navbar-brand {
+  padding-left: 13%;
+}
 .nav-item {
   margin: 0;
   padding: 0;
@@ -43,20 +46,17 @@ section {
   display: inline;
 }
 
-#navbarNav {
-  padding-left: 53%;
-}
-
-nav {
-  position: sticky;
-}
-
 /* ? HEADER */
 
 .hero {
   background-color: #66bfbf;
   height: 100%;
-  padding: 23%;
+  padding: 8% 12%;
+  color: aliceblue;
+  font-weight: 00;
+  font-size: larger;
+  border: 1px solid black;
+
 }
 
 /* ? ABOUT */
@@ -93,15 +93,65 @@ nav {
   padding-left: 5%;
   padding-top: 5%;
 }
+.about-text a {
+  text-decoration: none;
+}
 
 .about-links {
-  padding-left: 28%;
-  padding-top: 12%;
+  padding: 3% 21% 2%;
 }
 
 footer {
   text-align: center;
-  background-color: rgb(7, 68, 62);
+  background-color: #276678;
   color: white;
 }
 /* ? LISTEN */
+
+#skills {
+  text-align: center;
+}
+
+#skills img {
+  width: 4%;
+}
+.skill-icon {
+  display: block;
+}
+
+/* ? SUBMIT */
+
+form {
+  padding: 2% 32% 0;
+}
+
+form label,
+input {
+  display: block;
+}
+
+.contact-icon {
+  float: right;
+  padding: 8% 37% 0% 0;
+}
+
+.phone {
+  padding-left: 41%;
+}
+
+.hero + .about {
+  padding: 6% 0 3%;
+}
+
+.tamir-kid {
+  width: 80%;
+  border-radius: 10%;
+  margin-left: 10%;
+  border: 2px dashed black;
+}
+.home-img {
+  background-color: #ffe3de;
+}
+
+ul {
+padding: 2% 0 2% 28% 

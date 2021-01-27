@@ -16,51 +16,95 @@
     <title>Contact Tamir Chen</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">&lt;/Tamir Chen&gt;</a>
+    <header>
+      <!-- ? NAV -->
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/"> Home </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about.html"> About </a>
-          </li>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">&lt;/Tamir Chen&gt;</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/"> Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html"> About </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/webdev.html">Web developing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/music.html">Music</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-          <li class="nav-item">
-            <a class="nav-link" href="/webdev.html">Web developing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/music.html">Music</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="/contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <section class="header hero">
-      <header><h1>Contact</h1></header>
-    </section>
-
-    <section id="contact">
-      <h2>Contact me</h2>
-      <span class="contact-details">Email</span>
-      <span class="contact-details">Phone</span>
-      <div class="about-links">
+    <section class="header hero contact">
+      <header><h1>Contact me</h1></header>
+      <div class="phone">Phone - +4917656939369</div>
+      <div class="contact-icon">
         <a href="https://www.linkedin.com/in/tamir-chen-22a84a155/"
-          ><i class="fa fa-linkedin" aria-hidden="true"></i
+          ><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i
         ></a>
-        <a href="https://github.com/tamirchn1"><i class="fab fa-github"></i></a>
+        <br />
+        <a href="https://github.com/tamirchn1"
+          ><i class="fab fa-github fa-2x"></i
+        ></a>
       </div>
+      <form action="mailto:Tamirchn1@gmail.com" method="post">
+        <label for="name">Enter your name: </label>
+        <input id="name" type="text" placeholder="your name" />
+        <label for="email">Enter your Email: </label>
+        <input id="name" type="email" placeholder="your name" />
+        <label for="message">Enter your message: </label>
+
+        <textarea
+          placeholder="your message"
+          name="your msg"
+          id="message"
+          cols="23"
+          rows="4"
+        ></textarea>
+        <br />
+        <button type="submit" value="submit">Submit</button>
+      </form>
     </section>
 
     <footer>
       <span> &copy;2021 All right reserved</span>
       <span> made with ❤️ by Tamir Chen</span>
     </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
