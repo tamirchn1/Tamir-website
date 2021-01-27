@@ -26,7 +26,7 @@ h2 {
   text-decoration: underline cadetblue;
 }
 
-/* ? NAV */
+/* ? ************************************************NAVBAR******************************************** */
 
 #navbarNav {
   padding-left: 40%;
@@ -43,7 +43,7 @@ h2 {
   display: inline;
 }
 
-/* ? HEADER */
+/* ? ***********************************************HERO HEADER******************************************** */
 
 .hero {
   background-color: #66bfbf;
@@ -55,8 +55,7 @@ h2 {
   border: 1px solid black;
 }
 
-
-/* ? ABOUT */
+/* ? ************************************************ABOUT PAGE******************************************** */
 
 #circleImg {
   width: 25%;
@@ -97,19 +96,27 @@ h2 {
 .about-links {
   padding: 3% 21% 2%;
 }
+#skills {
+  text-align: center;
+}
+
+#skills img {
+  width: 4%;
+}
+.skill-icon {
+  display: block;
+}
 
 /* ? ************************************************ WEB DEVELOPING******************************************** */
-
-
 
 .portfolio-links {
   padding: 2% 18% 7.6% 28%;
 }
-a{
+a {
   text-decoration: none;
 }
 
-/* ? ************************************************ Music ******************************************** */
+/* ? *************************************************** MUSIC ******************************************** */
 
 .music-header {
   display: inline-block;
@@ -126,19 +133,10 @@ a{
   float: right;
 }
 
-#skills {
-  text-align: center;
-}
-
-#skills img {
-  width: 4%;
-}
-.skill-icon {
-  display: block;
+iframe {
 }
 
 /* ? ************************************************ CONTACT ******************************************** */
-
 
 form {
   padding: 2% 32% 0;
@@ -173,8 +171,8 @@ input {
 }
 /* ? ************************************************ FOOTER ******************************************** */
 
-
 footer {
   text-align: center;
   background-color: #276678;
   color: white;
+}
