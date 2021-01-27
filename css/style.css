@@ -56,7 +56,9 @@ h2 {
 }
 
 /* ? ************************************************ABOUT PAGE******************************************** */
-
+.hero + .about {
+  padding: 6% 0 3%;
+}
 #circleImg {
   width: 25%;
   height: 25%;
@@ -109,6 +111,9 @@ h2 {
 
 /* ? ************************************************ WEB DEVELOPING******************************************** */
 
+#webdev {
+  padding-bottom: 5.5%;
+}
 .portfolio-links {
   padding: 2% 18% 7.6% 28%;
 }
@@ -133,9 +138,9 @@ a {
   float: right;
 }
 
-iframe {
+.right-icon {
+  float: right;
 }
-
 /* ? ************************************************ CONTACT ******************************************** */
 
 form {
@@ -146,7 +151,9 @@ form label,
 input {
   display: block;
 }
-
+.contact {
+  padding-top: 9.7%;
+}
 .contact-icon {
   float: right;
   padding: 8% 37% 0% 0;
@@ -154,10 +161,6 @@ input {
 
 .phone {
   padding-left: 41%;
-}
-
-.hero + .about {
-  padding: 6% 0 3%;
 }
 
 .tamir-kid {
