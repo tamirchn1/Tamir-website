@@ -128,6 +128,9 @@ a {
 
 /* ? *************************************************** MUSIC ******************************************** */
 
+#music {
+  display: block;
+}
 .music-header {
   display: inline-block;
   width: 100%;
@@ -152,7 +155,19 @@ a {
 }
 .Atlantis {
   float: right;
-  margin: 5% 13% auto auto;
+  /* margin: 5% 13% auto auto; */
+}
+iframe {
+  display: inline;
+}
+.soundAndSoda {
+  margin: 4% 8% auto auto;
+  display: block;
+  float: right;
+}
+.fa-soundcloud {
+  display: block;
+  padding-bottom: 5%;
 }
 /* ? ************************************************ CONTACT ******************************************** */
 
