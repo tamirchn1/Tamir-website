@@ -27,7 +27,9 @@ h2 {
 }
 
 /* ? ************************************************NAVBAR******************************************** */
-
+nav {
+  position: sticky;
+}
 #navbarNav {
   padding-left: 40%;
 }
@@ -143,6 +145,14 @@ a {
 
 .right-icon {
   float: right;
+}
+
+.saloon-rave {
+  margin: 0 2% auto 12%;
+}
+.Atlantis {
+  float: right;
+  margin: 5% 13% auto auto;
 }
 /* ? ************************************************ CONTACT ******************************************** */
 
