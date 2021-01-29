@@ -126,6 +126,12 @@ a {
   text-decoration: none;
 }
 
+@media only screen and (max-width: 1070px) {
+  footer {
+    margin-top: 43%;
+  }
+}
+
 /* ? *************************************************** MUSIC ******************************************** */
 
 #music {
@@ -169,6 +175,18 @@ iframe {
   display: block;
   padding-bottom: 5%;
 }
+@media only screen and (max-width: 600px) {
+  .Atlantis {
+    display: block;
+  }
+  .fa-soundcloud {
+    padding-left: 30%;
+  }
+  .soundAndSoda {
+    display: block;
+  }
+}
+
 /* ? ************************************************ CONTACT ******************************************** */
 
 form {
