@@ -27,9 +27,7 @@ h2 {
 }
 
 /* ? ************************************************NAVBAR******************************************** */
-nav {
-  position: sticky;
-}
+
 #navbarNav {
   padding-left: 40%;
 }
@@ -126,7 +124,7 @@ a {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 1070px) {
+@media only screen and (max-width: 1200px) {
   footer {
     margin-top: 43%;
   }
@@ -175,7 +173,7 @@ iframe {
   display: block;
   padding-bottom: 5%;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1200px) {
   .Atlantis {
     display: block;
   }
@@ -224,4 +222,8 @@ footer {
   text-align: center;
   background-color: #276678;
   color: white;
+}
+
+footer + span {
+  display: block;
 }
