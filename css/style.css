@@ -154,35 +154,41 @@ a {
   float: right;
 }
 
-.saloon-rave {
-  margin: 0 2% auto 12%;
+.music-projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #ffe3de;
 }
-.Atlantis {
-  float: right;
-  /* margin: 5% 13% auto auto; */
+.project {
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+  margin-top: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2rem;
+  text-align: center;
 }
 iframe {
-  display: inline;
+  margin-top: 20px;
 }
-.soundAndSoda {
-  margin: 4% 8% auto auto;
-  display: block;
-  float: right;
+
+.music-projects :first-child {
+  background-image: url("../images/atlantis.png");
 }
-.fa-soundcloud {
-  display: block;
-  padding-bottom: 5%;
+.music-projects :nth-child(2) {
+  background-image: url("../images/saloon-rave.jpg");
 }
-@media only screen and (max-width: 1200px) {
-  .Atlantis {
-    display: block;
-  }
-  .fa-soundcloud {
-    padding-left: 30%;
-  }
-  .soundAndSoda {
-    display: block;
-  }
+.music-projects :nth-child(3) {
+  background-image: url("../images/moriahplaza.jpg");
+}
+.music-projects :nth-child(6) {
+  background-image: url("../images/solarium-logo.jpg");
+}
+.dgtl {
+  padding-top: 7%;
+  background-color: #ffe3de;
+  border: 2px solid black;
 }
 
 /* ? ************************************************ CONTACT ******************************************** */
