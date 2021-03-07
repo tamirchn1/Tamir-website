@@ -135,8 +135,9 @@ h2 {
 .websites h3 {
   text-align: center;
 }
+
 .webpage img {
-  border: 7px dashed rgb(168, 109, 109);
+  border: 3px dashed rgb(168, 109, 109);
   max-width: 50%;
   max-height: 50%;
   border-radius: 10%;
