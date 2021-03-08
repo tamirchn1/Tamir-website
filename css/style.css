@@ -11,6 +11,7 @@ a {
 body {
   margin: 0;
   margin-bottom: 0;
+  background-color: beige;
 }
 
 h1 {
@@ -134,6 +135,11 @@ h2 {
 #webdev {
   padding-bottom: 1%;
 }
+#webdev h2 {
+  background: lightblue;
+  padding: 2%;
+}
+
 .websites {
   background-color: antiquewhite;
 }
@@ -154,8 +160,9 @@ h2 {
 
 /* ? *************************************************** MUSIC ******************************************** */
 
-#music {
-  display: block;
+.music-main h2 {
+  background-color: #65a2d6a1;
+  padding: 2%;
 }
 .music-header {
   display: inline-block;
@@ -235,6 +242,10 @@ h2 {
 }
 /* ? ************************************************ FOOTER ******************************************** */
 
+.contact-footer {
+  margin: 2% 0 0;
+  padding: 1%;
+}
 footer {
   text-align: center;
   background-color: #276678;
