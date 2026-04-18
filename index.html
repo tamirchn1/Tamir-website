@@ -1,102 +1,586 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-3CS0ZVG7BJ"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tamir Chen — Musician & Music Producer · Berlin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --bg2: #161616;
+    --bg3: #1e1e1e;
+    --text: #f0ece4;
+    --muted: #888;
+    --accent: #c8a96e;
+    --accent2: #7ec8a9;
+    --accent3: #c87e9a;
+    --border: rgba(255,255,255,0.08);
+    --serif: 'DM Serif Display', serif;
+    --sans: 'DM Sans', sans-serif;
+    --mono: 'Space Mono', monospace;
+  }
 
-      gtag("config", "G-3CS0ZVG7BJ");
-    </script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/style.css" />
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <title>Tamir Chen</title>
-  </head>
+  html { scroll-behavior: smooth; }
 
-  <body>
-    <header>
-      <!-- ? NAV -->
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="index.html">&lt;/Tamir Chen&gt;</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html"> Home </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html"> About </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="webdev.html">Web developing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="music.html">Music</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 3rem; height: 60px;
+    background: rgba(13,13,13,0.92);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    font-family: var(--serif); font-size: 18px;
+    color: var(--text); text-decoration: none; letter-spacing: 0.01em;
+  }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    font-size: 13px; font-weight: 400; color: var(--muted);
+    text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
+    transition: color 0.2s; padding: 6px 12px; border-radius: 20px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.06); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 3rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 70% 40%, rgba(200,169,110,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(126,200,169,0.06) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.03;
+    background-image: linear-gradient(var(--border) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-label {
+    font-family: var(--mono); font-size: 11px; color: var(--accent);
+    letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 400; line-height: 1.0; color: var(--text);
+    margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+  }
+  .hero h1 em { color: var(--accent); font-style: italic; }
+  .hero-sub {
+    font-size: 15px; color: var(--muted); max-width: 520px;
+    margin-bottom: 2.5rem; line-height: 1.8;
+    opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
+  }
+  .hero-tags {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
+  }
+  .tag {
+    font-size: 12px; padding: 7px 18px;
+    border: 1px solid var(--border); border-radius: 24px;
+    color: var(--muted); font-family: var(--mono); letter-spacing: 0.04em;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+  .tag:hover { border-color: var(--accent); color: var(--accent); background: rgba(200,169,110,0.05); }
+  .tag.gold { border-color: rgba(200,169,110,0.5); color: var(--accent); background: rgba(200,169,110,0.07); }
+  .tag.teal { border-color: rgba(126,200,169,0.5); color: var(--accent2); background: rgba(126,200,169,0.07); }
+  .tag.pink { border-color: rgba(200,126,154,0.5); color: var(--accent3); background: rgba(200,126,154,0.07); }
+
+  .scroll-hint {
+    position: absolute; bottom: 2rem; right: 3rem;
+    font-family: var(--mono); font-size: 10px; color: var(--muted);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    writing-mode: vertical-rl;
+    opacity: 0; animation: fadeIn 1s 1.5s forwards;
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 3rem; max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-family: var(--mono); font-size: 11px; color: var(--accent);
+    letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 3rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .section-label::after {
+    content: ''; flex: 1; max-width: 60px;
+    height: 1px; background: var(--accent); opacity: 0.4;
+  }
+  h2 {
+    font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400; line-height: 1.15; margin-bottom: 1.5rem;
+    color: var(--text);
+  }
+  h2 em { font-style: italic; color: var(--accent); }
+
+  /* PHOTO */
+  .hero-photo {
+    position: absolute; inset: 0;
+    overflow: hidden;
+  }
+  .hero-photo img {
+    width: 100%; height: 100%; object-fit: cover;
+    object-position: center 25%;
+    filter: grayscale(100%) contrast(1.1) brightness(0.45);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.95) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.95) 100%);
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: start;
+  }
+  .about-text p {
+    font-size: 15px; color: rgba(240,236,228,0.75); margin-bottom: 1rem; line-height: 1.9;
+  }
+  .about-text p strong { color: var(--text); font-weight: 500; }
+  .skills-col { display: flex; flex-direction: column; gap: 1.5rem; }
+  .skill-group h4 {
+    font-family: var(--mono); font-size: 10px; color: var(--accent);
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .skill-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill {
+    font-size: 12px; padding: 5px 14px;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 20px; color: rgba(240,236,228,0.65);
+    font-family: var(--mono);
+  }
+
+  /* PROJECTS / MUSIC */
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--border); }
+  .proj-card {
+    background: var(--bg); padding: 2.5rem;
+    transition: background 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .proj-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; opacity: 0; transition: opacity 0.3s;
+  }
+  .proj-card.gold::before { background: var(--accent); }
+  .proj-card.teal::before { background: var(--accent2); }
+  .proj-card.pink::before { background: var(--accent3); }
+  .proj-card:hover { background: var(--bg2); }
+  .proj-card:hover::before { opacity: 1; }
+  .proj-num {
+    font-family: var(--mono); font-size: 10px; color: var(--muted);
+    letter-spacing: 0.1em; margin-bottom: 1.5rem;
+  }
+  .proj-card h3 {
+    font-family: var(--serif); font-size: 22px; margin-bottom: 10px;
+  }
+  .proj-card.gold h3 { color: var(--accent); }
+  .proj-card.teal h3 { color: var(--accent2); }
+  .proj-card.pink h3 { color: var(--accent3); }
+  .proj-card p { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
+  .proj-meta {
+    font-family: var(--mono); font-size: 10px; color: var(--muted);
+    letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.8;
+  }
+  .proj-link {
+    display: inline-block; margin-top: 1rem;
+    font-size: 12px; font-family: var(--mono);
+    color: var(--accent); text-decoration: none;
+    border-bottom: 1px solid rgba(200,169,110,0.3);
+    padding-bottom: 1px; transition: border-color 0.2s;
+  }
+  .proj-link:hover { border-color: var(--accent); }
+
+  /* SERVICES */
+  .services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--border); }
+  .service-item {
+    background: var(--bg); padding: 2rem 2.5rem;
+    transition: background 0.2s;
+  }
+  .service-item:hover { background: var(--bg2); }
+  .service-icon {
+    width: 36px; height: 36px; margin-bottom: 1.2rem;
+    opacity: 0.5;
+  }
+  .service-item h4 {
+    font-size: 14px; font-weight: 500; color: var(--text);
+    margin-bottom: 6px; letter-spacing: 0.02em;
+  }
+  .service-item p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+  /* CONTACT */
+  .contact-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+  }
+  .contact-left p { font-size: 15px; color: rgba(240,236,228,0.7); line-height: 1.9; }
+  .contact-links { display: flex; flex-direction: column; gap: 10px; margin-top: 2rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13px; color: var(--muted); text-decoration: none;
+    padding: 14px 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+  .contact-link:hover { border-color: rgba(200,169,110,0.4); color: var(--text); background: var(--bg2); }
+  .contact-link span.label { flex: 1; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .contact-link span.val { font-size: 12px; color: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  footer p { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+
+  /* DIVIDER */
+  .full-divider { border: none; border-top: 1px solid var(--border); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+
+  /* HAMBURGER (mobile) */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 1px; background: var(--text); transition: all 0.3s; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; flex-direction: column; gap: 1rem; position: absolute; top: 60px; left: 0; right: 0; background: var(--bg); padding: 2rem 1.5rem; border-bottom: 1px solid var(--border); }
+    .nav-links.open { display: flex; }
+    .hamburger { display: flex; }
+    .hero { padding: 0 1.5rem 4rem; }
+    section { padding: 4rem 1.5rem; }
+    .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .scroll-hint { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Tamir Chen</a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#listen">Listen</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-photo">
+    <img src="tamir.png" alt="Tamir Chen at the mixing desk">
+  </div>
+  <h1>Tamir<br>Chen<em>.</em></h1>
+  <p class="hero-sub">Musician, music producer & studio founder based in Berlin.<br>Bass player · Live & studio musician · Podcast editor · Ableton teacher · Band facilitator.</p>
+  <p class="scroll-hint">Scroll</p>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">About</p>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>Bass, <em>studio</em> & stage</h2>
+      <p>I'm Tamir Chen — a musician and music producer from Tel Aviv, based in <strong>Berlin's Neukölln</strong> for over a decade. My work lives at the intersection of performance, production, education, and community building.</p>
+      <p>As a <strong>bass player and studio musician</strong>, I perform live and record sessions across genres. I founded and run <strong>Solarium Studio</strong> — an artistic hub in Neukölln that is home to bands, rehearsal spaces, cultural events, and the annual Solarium Festival.</p>
+      <p>I produce and record music, <strong>edit and mix podcasts</strong>, teach bass and Ableton Live, and facilitate bands through <strong>Bands Berlin</strong> — bringing amateur musicians together, forming groups, and guiding them all the way to the stage. I also work with <strong>children and people with special needs</strong>, bringing music to everyone.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:2rem;">
+      <div style="overflow:hidden; border:1px solid var(--border); aspect-ratio:4/3; background:var(--bg3); display:flex; align-items:center; justify-content:center;">
+        <img src="tamir2.png" alt="Tamir Chen" style="width:100%; height:100%; display:block; object-fit:cover; object-position:center top;">
+      </div>
+      <div class="skill-group">
+        <h4>Music production & recording</h4>
+        <div class="skill-pills">
+          <span class="pill">Ableton Live</span>
+          <span class="pill">Mixing</span>
+          <span class="pill">Mastering</span>
+          <span class="pill">Podcast editing</span>
+          <span class="pill">Studio recording</span>
         </div>
-      </nav>
-    </header>
+      </div>
+      <div class="skill-group">
+        <h4>Performance</h4>
+        <div class="skill-pills">
+          <span class="pill">Electric bass</span>
+          <span class="pill">Live shows</span>
+          <span class="pill">Session work</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Teaching & facilitation</h4>
+        <div class="skill-pills">
+          <span class="pill">Bass lessons</span>
+          <span class="pill">Ableton lessons</span>
+          <span class="pill">Band coaching</span>
+          <span class="pill">Special needs</span>
+          <span class="pill">Children</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Management</h4>
+        <div class="skill-pills">
+          <span class="pill">Studio management</span>
+          <span class="pill">Artist development</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ? hero -->
-    <section class="hero">
-      <h1>I Am Tamir Chen</h1>
-    </section>
+<hr class="full-divider">
 
-    <section class="home-img">
-      <img
-        class="tamir-kid"
-        src="./images/tamir_kid.jpg"
-        alt="photo of Tamir the child"
-      />
-    </section>
-    <footer>
-      <span> &copy;2021 All right reserved</span>
-      <span> made with ❤️ by Tamir Chen</span>
-    </footer>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+<!-- PROJECTS -->
+<section id="projects" style="max-width:100%; padding-left:0; padding-right:0;">
+  <div style="padding: 0 3rem; max-width:1100px; margin: 0 auto 3rem;">
+    <p class="section-label">Projects</p>
+    <h2>Bands, studios<br>& <em>creative ventures</em></h2>
+  </div>
+  <div class="projects-grid">
+
+    <div class="proj-card gold">
+      <p class="proj-num">01 — Band</p>
+      <h3>Moriah Plaza</h3>
+      <p>Psych bossa and Brazilian soul, reimagined from Berlin via the Dead Sea. Co-founded with Moosh Lahav at Solarium Studio, the band released a debut album on Batov Records (2023) to global acclaim — BBC Radio 6, NTS, FIP, Bandcamp Weekly — and followed it with the "Própolis" EP in late 2025.</p>
+      <div class="proj-meta">
+        Batov Records · Berlin · Tel Aviv<br>
+        Tropicalia · Psych bossa · Jazz
+      </div>
+      <a class="proj-link" href="https://moriahplaza.bandcamp.com" target="_blank">moriahplaza.bandcamp.com →</a>
+    </div>
+
+    <div class="proj-card teal">
+      <p class="proj-num">02 — Band</p>
+      <h3>Cherry Bandora</h3>
+      <p>Berlin-based bouzouki quintet reviving 50s and 60s Mediterranean and Middle Eastern classics through surf rock and psychedelic lenses. Greek laïko, Anadolu rock, and Israeli mizrahit collide in an explosive live show — singing in Greek, Turkish, and Hebrew. Tamir plays bass and sitar.</p>
+      <div class="proj-meta">
+        Berlin · Rebel Up Records · Rumi Sounds<br>
+        Mediterranean · Psychedelic · Oriental
+      </div>
+      <a class="proj-link" href="https://cherrybandora.bandcamp.com" target="_blank">cherrybandora.bandcamp.com →</a>
+    </div>
+
+    <div class="proj-card pink">
+      <p class="proj-num">03 — Studio & Space</p>
+      <h3>Solarium Studio</h3>
+      <p>An artistic hub and rehearsal center in Neukölln, Berlin. Home to bands, sessions, cultural events, and the annual Solarium Festival. A community space where musicians come to create, rehearse, record, and connect.</p>
+      <div class="proj-meta">
+        Neukölln · Berlin<br>
+        Studio · Events · Festival
+      </div>
+      <a class="proj-link" href="https://www.youtube.com/watch?v=wHyD9I6Trm4&list=PLgvDqUGFoWpidP9ea8Oh0oIqQy2oclXfc" target="_blank">Solarium Antenna playlist →</a>
+    </div>
+
+    <div class="proj-card gold">
+      <p class="proj-num">04 — Program</p>
+      <h3>Bands Berlin</h3>
+      <p>A music facilitation program that forms bands and prepares them for the stage. Tamir guides the process from the first rehearsal to the live performance — getting the best out of every player in the room.</p>
+      <div class="proj-meta">
+        Berlin<br>
+        Band coaching · Live performance
+      </div>
+      <a class="proj-link" href="https://www.bandsberlin.com" target="_blank">bandsberlin.com →</a>
+    </div>  </div>
+</section>
+
+<hr class="full-divider">
+
+<!-- LISTEN -->
+<section id="listen">
+  <p class="section-label">Listen</p>
+  <h2>Music on <em>Spotify</em></h2>
+  <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 2rem;">
+
+    <div style="display:flex; flex-direction:column; gap:6px;">
+      <p style="font-family:var(--mono); font-size:10px; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase;">Moriah Plaza LP — Batov Records</p>
+      <iframe style="border-radius:4px; border:none; display:block;" src="https://open.spotify.com/embed/artist/31ejpyhWMC2NZrhE3gTFQK?utm_source=generator" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:6px;">
+      <p style="font-family:var(--mono); font-size:10px; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase;">Moriah Plaza — Própolis EP · Batov Records</p>
+      <iframe style="border-radius:4px; border:none; display:block;" src="https://open.spotify.com/embed/album/3kU1HgT9hlB1zpBHXSlaeU?utm_source=generator" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:6px;">
+      <p style="font-family:var(--mono); font-size:10px; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase;">Tamir Hassan — Guitarot · Age of Self Records</p>
+      <iframe style="border-radius:4px; border:none; display:block;" src="https://open.spotify.com/embed/artist/5GAlAqBYJm6Z9ObOGzbMNc?utm_source=generator" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:6px;">
+      <p style="font-family:var(--mono); font-size:10px; color:var(--accent2); letter-spacing:0.1em; text-transform:uppercase;">Cherry Bandora — Esy · Batov Records</p>
+      <iframe style="border-radius:4px; border:none; display:block;" src="https://open.spotify.com/embed/track/5DXtZ053Yduj1HjVoFUoil?utm_source=generator" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:6px;">
+      <p style="font-family:var(--mono); font-size:10px; color:var(--accent2); letter-spacing:0.1em; text-transform:uppercase;">Soda Fabric — Atlantis · Anova Records</p>
+      <iframe style="border-radius:4px; border:none; display:block;" src="https://open.spotify.com/embed/artist/67UmOoYhiwaR3s6pXSOuPk?utm_source=generator" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:6px;">
+      <p style="font-family:var(--mono); font-size:10px; color:var(--accent3); letter-spacing:0.1em; text-transform:uppercase;">Tarim — Saloon Rave · Full Body Massage Records</p>
+      <iframe style="border-radius:4px; border:none; display:block;" src="https://open.spotify.com/embed/album/4BnuQkJetEXgIE68N20Ndo?utm_source=generator" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:6px; grid-column: span 3;">
+      <p style="font-family:var(--mono); font-size:10px; color:var(--accent3); letter-spacing:0.1em; text-transform:uppercase;">Projects I played in — Playlist</p>
+      <iframe style="border-radius:4px; border:none; display:block;" src="https://open.spotify.com/embed/playlist/1aG16COXzqNLuQbrt37F1d?utm_source=generator" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+  </div>
+</section>
+
+<hr class="full-divider">
+
+<!-- SERVICES -->
+<section id="services">
+  <p class="section-label">Services</p>
+  <h2>What I <em>offer</em></h2>
+  <div class="services-list">
+
+    <div class="service-item">
+      <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
+        <circle cx="10" cy="26" r="3"/><circle cx="24" cy="22" r="3"/>
+        <path d="M13 26V12l14-4v14"/><line x1="13" y1="16" x2="27" y2="12"/>
+      </svg>
+      <h4>Music production & recording</h4>
+      <p>Full production from concept to master. Recording sessions at Solarium Studio, mixing, and mastering across genres.</p>
+    </div>
+
+    <div class="service-item">
+      <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
+        <rect x="13" y="6" width="10" height="16" rx="5"/>
+        <path d="M8 20c0 5.5 4.5 10 10 10s10-4.5 10-10"/>
+        <line x1="18" y1="30" x2="18" y2="34"/><line x1="12" y1="34" x2="24" y2="34"/>
+      </svg>
+      <h4>Podcast editing & production</h4>
+      <p>Recording, editing, sound design, and mastering for podcasts. Clean, professional results ready for any platform.</p>
+    </div>
+
+    <div class="service-item">
+      <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M8 30 Q8 18 18 14 Q28 10 28 6"/>
+        <circle cx="6" cy="30" r="3"/><circle cx="26" cy="6" r="3"/>
+        <line x1="22" y1="8" x2="32" y2="8"/><line x1="22" y1="11" x2="32" y2="11"/>
+        <line x1="2" y1="28" x2="12" y2="28"/><line x1="2" y1="31" x2="12" y2="31"/>
+      </svg>
+      <h4>Bass lessons</h4>
+      <p>One-on-one bass tuition for all levels. Technique, groove, theory, and feel. Works with children and students with special needs.</p>
+    </div>
+
+    <div class="service-item">
+      <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
+        <rect x="5" y="7" width="26" height="18" rx="2"/>
+        <line x1="10" y1="13" x2="26" y2="13"/><line x1="10" y1="17" x2="20" y2="17"/>
+        <path d="M2 25h32l-2 4H4z"/>
+      </svg>
+      <h4>Ableton Live lessons</h4>
+      <p>Learn production, sound design, and live performance with Ableton. Beginner to advanced, tailored to your goals.</p>
+    </div>
+
+    <div class="service-item">
+      <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
+        <rect x="6" y="8" width="24" height="16" rx="2"/>
+        <circle cx="18" cy="16" r="5"/>
+        <circle cx="18" cy="16" r="2"/>
+        <rect x="10" y="24" width="16" height="6" rx="1"/>
+        <line x1="10" y1="10" x2="12" y2="10"/><line x1="10" y1="13" x2="12" y2="13"/>
+      </svg>
+      <h4>Band facilitation</h4>
+      <p>Forming bands from scratch, rehearsal direction, and stage preparation. Available via Bands Berlin or independently.</p>
+    </div>
+
+    <div class="service-item">
+      <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M22 4 L26 8 L16 18 C17 20 17 23 15 25 C12 28 7 28 5 26 C3 24 4 19 7 17 C9 15 12 15 14 16 L24 6 Z"/>
+        <line x1="20" y1="6" x2="24" y2="10"/>
+        <circle cx="9" cy="23" r="1.5" fill="currentColor" stroke="none" opacity="0.7"/>
+        <line x1="27" y1="5" x2="31" y2="3"/><line x1="29" y1="7" x2="33" y2="7"/><line x1="28" y1="9" x2="31" y2="11"/>
+      </svg>
+      <h4>Session bass & live work</h4>
+      <p>Available for studio sessions, live gigs, and touring. Experienced across soul, jazz, rock, bossa nova, and world music.</p>
+    </div>
+
+  </div>
+</section>
+
+<hr class="full-divider">
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label">Contact</p>
+  <div class="contact-inner">
+    <div class="contact-left">
+      <h2>Get in <em>touch</em></h2>
+      <p>Available for music production, session work, lessons, podcast work, and creative collaborations. Based in Berlin Neukölln — reachable worldwide.</p>
+    </div>
+    <div class="contact-links">
+      <a class="contact-link" href="https://www.instagram.com/tamir_hassan_/" target="_blank">
+        <span class="label">Instagram</span>
+        <span class="val">@tamir_hassan_</span>
+      </a>
+      <a class="contact-link" href="https://soundcloud.com/tamir-chen" target="_blank">
+        <span class="label">SoundCloud</span>
+        <span class="val">tamir-chen</span>
+      </a>
+      <a class="contact-link" href="https://www.facebook.com/tamir.chen.1" target="_blank">
+        <span class="label">Facebook</span>
+        <span class="val">tamir.chen.1</span>
+      </a>
+      <a class="contact-link" href="https://wa.me/4917656939369" target="_blank">
+        <span class="label">WhatsApp</span>
+        <span class="val">+49 176 569 393 69</span>
+      </a>
+      <a class="contact-link" href="https://linktr.ee/tamirchen" target="_blank">
+        <span class="label">Linktree</span>
+        <span class="val">linktr.ee/tamirchen</span>
+      </a>
+      <a class="contact-link" href="/cdn-cgi/l/email-protection#651104080c17060d0b54250208040c094b060a08">
+        <span class="label">Email</span>
+        <span class="val"><span class="__cf_email__" data-cfemail="6b1f0a0602190803055a2b0c060a020745080406">[email&#160;protected]</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="yr"></span> Tamir Chen · Berlin</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  document.getElementById('yr').tex
