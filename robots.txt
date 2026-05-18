@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tamirchn1.github.io/Tamir-website/sitemap.xml
