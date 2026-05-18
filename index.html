@@ -615,6 +615,47 @@
       padding-bottom: 1px;
     }
 
+    .service-link {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 12px;
+      font-family: var(--mono);
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(202, 163, 102, 0.3);
+      padding-bottom: 1px;
+    }
+
+    .service-link:hover,
+    .proj-link:hover {
+      border-color: var(--accent);
+    }
+
+    .service-pages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--border);
+      margin-top: 2rem;
+    }
+
+    .service-page-card {
+      background: var(--bg);
+      padding: 1.6rem;
+    }
+
+    .service-page-card h3 {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 400;
+      margin-bottom: 0.7rem;
+    }
+
+    .service-page-card p {
+      font-size: 14px;
+      color: rgba(241, 236, 228, 0.72);
+    }
+
     .listen-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -732,6 +773,10 @@
       .listen-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
+      .service-pages-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 768px) {
@@ -796,6 +841,9 @@
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="music-production-berlin.html">Production</a>
+      <a href="bass-lessons-berlin.html">Bass Lessons</a>
+      <a href="ableton-lessons-berlin.html">Ableton</a>
       <a href="#projects">Projects</a>
       <a href="#listen">Listen</a>
       <a href="#faq">FAQ</a>
@@ -824,7 +872,7 @@
         <span class="tag">Band Facilitation</span>
       </div>
       <div class="hero-cta">
-        <a class="button" href="mailto:Tamirchn1@gmail.com">Book a project</a>
+        <a class="button" href="music-production-berlin.html">Book a project</a>
         <a class="button-secondary" href="#services">See services</a>
       </div>
       <div class="hero-proof" aria-label="Professional highlights">
@@ -907,6 +955,7 @@
           <h3>Music production and recording</h3>
           <p>Full music production in Berlin for singles, albums, demos, and artist development. Recording sessions at Solarium Studio, arrangement support, editing, mixing, and final delivery.</p>
           <div class="service-keywords">Producer Berlin | Recording studio | Mixing | Mastering</div>
+          <a class="service-link" href="music-production-berlin.html">Dedicated service page</a>
         </article>
 
         <article class="service-item">
@@ -930,6 +979,7 @@
           <h3>Bass lessons in Berlin</h3>
           <p>One-on-one bass lessons for beginners, intermediate players, and experienced musicians who want stronger groove, technique, tone, theory, and confidence.</p>
           <div class="service-keywords">Bass teacher Berlin | Bass guitar lessons | Technique and groove</div>
+          <a class="service-link" href="bass-lessons-berlin.html">Dedicated service page</a>
         </article>
 
         <article class="service-item">
@@ -941,6 +991,7 @@
           <h3>Ableton Live lessons</h3>
           <p>Private Ableton Live lessons in Berlin focused on workflow, production, arrangement, sound design, live setup, and helping artists finish strong tracks faster.</p>
           <div class="service-keywords">Ableton teacher Berlin | Production lessons | Live setup</div>
+          <a class="service-link" href="ableton-lessons-berlin.html">Dedicated service page</a>
         </article>
 
         <article class="service-item">
@@ -967,6 +1018,24 @@
           <h3>Session bass and live performance</h3>
           <p>Available for studio sessions, touring, gigs, live recordings, and collaborative work. Strong experience across soul, jazz, rock, bossa nova, Mediterranean music, and hybrid projects.</p>
           <div class="service-keywords">Session bassist Berlin | Live bass player | Studio musician</div>
+        </article>
+      </div>
+
+      <div class="service-pages-grid" aria-label="Dedicated service pages">
+        <article class="service-page-card">
+          <h3>Music Production Berlin</h3>
+          <p>A focused landing page for artists, bands, and collaborators looking for recording, arrangement, editing, mixing, and production support in Berlin.</p>
+          <a class="service-link" href="music-production-berlin.html">Open page</a>
+        </article>
+        <article class="service-page-card">
+          <h3>Bass Lessons Berlin</h3>
+          <p>A page built for students searching for private bass lessons in Berlin, with details on learning goals, levels, and approach.</p>
+          <a class="service-link" href="bass-lessons-berlin.html">Open page</a>
+        </article>
+        <article class="service-page-card">
+          <h3>Ableton Lessons Berlin</h3>
+          <p>A dedicated page for producers and musicians who want Ableton Live lessons in Berlin with hands-on guidance and workflow support.</p>
+          <a class="service-link" href="ableton-lessons-berlin.html">Open page</a>
         </article>
       </div>
     </section>
